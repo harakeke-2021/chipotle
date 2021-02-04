@@ -4,12 +4,13 @@ import { Route, Link } from 'react-router-dom'
 import ChristoDummy from './ChristoDummy'
 import PotentialMatches from './PotentialMatches'
 import PotentialPicture from './PotentialPicture'
+import PersonalInfo from './PersonalInfo'
 
 const App = () => {
   return (
     <>
 
-      <PotentialMatches />
+      <PersonalInfo />
       <PotentialPicture />
       <Route path='/test' component={ChristoDummy}/>
 
