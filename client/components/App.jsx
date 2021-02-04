@@ -1,12 +1,15 @@
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
 
-import Learners from './Learners'
+import ChristoDummy from './ChristoDummy'
 
 const App = () => {
   return (
     <>
-      <h1>Learners Rock!</h1>
-      <Learners />
+
+      <h1>WE GETTING SPICY BAYBEE</h1>
+      <Route path='/test' component={ChristoDummy}/>
+
     </>
   )
 }
