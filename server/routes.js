@@ -1,31 +1,26 @@
 const express = require('express')
 
-const db = require('./db/learners')
-
 const router = express.Router()
+const request = require('superagent')
 
 module.exports = router
 
 router.get('/', (req, res) => {
-  db.getLearners()
-    .then(learners => {
-      res.json(learners)
-      return null
-    })
-    .catch(err => {
-      res.status(500).send(err.message)
-      return null
-    })
+
 })
 
 router.post('/', (req, res) => {
-  const learner = req.body
-  db.addLearner(learner)
-    .then(newLearner => {
-      res.json(newLearner)
-      return null
+
+})
+
+router.get('/dog', (req, res) => {
+  const getReq = 'https://dog.ceo/api/breeds/image/random'
+
+  request.get(getReq)
+    .then((apiRes) => {
+      const { message } = apiRes.body
+      console.log(message)
+      res.json({ message })
     })
-    .catch(err => {
-      res.status(500).send(err.message)
-    })
+   
 })
