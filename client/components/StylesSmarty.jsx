@@ -1,15 +1,18 @@
 import React from 'react'
-import dogImage from '/test'
+const dogImage = '/test.jpg'
 export default function StylesSmarty() {
   return (
     <div className='container'>
-      <div className='photoPanel'>
-        <img src={dogImage} alt="dog image" />
+      <h1>Hello world</h1>
+      <div className='photo-panel'>
+        <img src={dogImage} className='dog-img' alt="dog image" />
+        <div className='btn-panel'>
+          <button>No</button>
+          <button>Yes</button>
+        </div>
+
       </div>
-      <div className='btnPanel'>
-        <button>No</button>
-        <button>Yes</button>
-      </div>
+      
     </div>
   )
 }
