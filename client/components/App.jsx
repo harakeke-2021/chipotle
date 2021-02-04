@@ -3,15 +3,13 @@ import { Route, Link } from 'react-router-dom'
 
 import ChristoDummy from './ChristoDummy'
 import PotentialMatches from './PotentialMatches'
-import PotentialPicture from './PotentialPicture'
-import PersonalInfo from './PersonalInfo'
+
 
 const App = () => {
   return (
     <>
 
-      <PersonalInfo />
-      <PotentialPicture />
+      <PotentialMatches />
       <Route path='/test' component={ChristoDummy}/>
 
     </>
