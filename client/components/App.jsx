@@ -1,11 +1,15 @@
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
 
-import PotentialMatches from './PotentialMatches'
+import ChristoDummy from './ChristoDummy'
 
 const App = () => {
   return (
     <>
-      <PotentialMatches />
+
+      <h1>WE GETTING SPICY BAYBEE</h1>
+      <Route path='/test' component={ChristoDummy}/>
+
     </>
   )
 }
