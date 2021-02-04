@@ -1,13 +1,15 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
+
 import ChristoDummy from './ChristoDummy'
 import StylesSmarty from './StylesSmarty'
+import PotentialMatches from './PotentialMatches'
 
 const App = () => {
   return (
     <>
 
-      <h1>WE GETTING SPICY BAYBEE</h1>
+      <PotentialMatches />
       <Route path='/test' component={ChristoDummy}/>
       <Route path='/styles' component={StylesSmarty} />
 
