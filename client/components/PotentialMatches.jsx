@@ -1,9 +1,11 @@
 import React from 'react'
 
+import PersonalInfo from './PersonalInfo'
+
 function PotentialMatches () {
   return (
     <div>
-      <h1>Im in LOVE!</h1>
+      <PersonalInfo />
     </div>
   )
 }
