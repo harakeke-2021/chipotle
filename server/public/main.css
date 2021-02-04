@@ -1,0 +1,30 @@
+.photo-panel {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  border: 4px;
+  border-style: solid;
+  border-color: black;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.dog-img{
+  justify-content: center;
+  height:100px;
+  width: 100px;
+}
+
+.photo-panel img {
+  max-width:100%;
+  max-height:100%;
+}
+
+.btn-panel {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content:center
+}
