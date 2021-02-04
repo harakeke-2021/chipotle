@@ -22,5 +22,4 @@ router.get('/dog', (req, res) => {
       console.log(message)
       res.json({ message })
     })
-   
 })
