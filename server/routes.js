@@ -5,14 +5,6 @@ const request = require('superagent')
 
 module.exports = router
 
-router.get('/', (req, res) => {
-
-})
-
-router.post('/', (req, res) => {
-
-})
-
 router.get('/dog', (req, res) => {
   const apiUrl = 'https://dog.ceo/api/breeds/image/random'
 
