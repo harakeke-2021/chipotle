@@ -8,8 +8,11 @@ import PotentialMatches from './PotentialMatches'
 const App = () => {
   return (
     <>
+      <h1 className ="title">Dog Tinder</h1>
 
-      <PotentialMatches />
+      <PotentialMatches/>
+
+
       <Route path='/test' component={ChristoSmarty}/>
 
     </>

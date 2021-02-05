@@ -29,17 +29,10 @@ function PersonalInfo () {
   }, [])
 
   return (
-    <div className='photo-details'>
-      <h1>{info.personal.name} {info.personal.lastName}</h1>
-      <p>Gender: {info.personal.gender}</p>
-      <p>Age: {info.personal.age}</p>
-      <p>Country: {info.personal.country}</p>
-      <p>City: {info.personal.city}</p>
-      <hr style={{ width: '50%' }}></hr>
-      <h1>Education</h1>
-      <h3>{info.education.university}</h3>
-      <p>{info.education.certificate}</p>
-      <p>Job: {info.position}</p>
+    <div className='text'>
+      <h3 className='cardName'>{info.personal.name} {info.personal.last_name}, {info.personal.age}</h3>
+      <p>{info.personal.country}, {info.personal.city}</p>
+      <p>{info.education.university}</p>
     </div>
   )
 }
