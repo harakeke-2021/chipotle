@@ -12,7 +12,6 @@ function PotentialMatches () {
         <PersonalInfo />
       </div>
       <Button/>
-
     </div>
   )
 }
