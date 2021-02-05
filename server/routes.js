@@ -29,8 +29,21 @@ router.get('/details', (req, res) => {
 
   request.get(apiUrl)
     .then(({ body }) => {
-      console.log(body)
-      res.json(body)
+      const {
+        person: {
+          education,
+          personal: {
+            name, gender, age, country, city,
+            last_name: lastName
+          },
+          work: {
+            position
+          }
+        }
+      } = body
+      const personal = { name, lastName, gender, age, country, city }
+
+      res.json({ education, personal, position })
       return null
     })
     .catch(err => {
