@@ -28,17 +28,6 @@ function PersonalInfo () {
       })
   }, [])
 
-  useEffect(() => {
-    request.get('/api/v1/details')
-      .then(resp => {
-        setInfo(resp)
-        return null
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  })
-
   return (
     <div>
       <h1>{info.personal.name} {info.personal.lastName}</h1>
