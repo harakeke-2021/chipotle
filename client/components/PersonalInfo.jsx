@@ -2,20 +2,31 @@ import React, { useState, useEffect } from 'react'
 import request from 'superagent'
 
 function PersonalInfo () {
-  const person = {
+  const [info, setInfo] = useState({
     personal: {
-      name: 'Gui',
-      last_name: 'Allred',
-      gender: 'Female',
-      age: 24,
-      country: 'Germany',
-      city: 'Tehran'
+      name: '',
+      last_name: '',
+      gender: '',
+      age: null,
+      country: '',
+      city: ''
     },
     education: {
-      certificate: 'Master',
-      university: 'Boston University'
+      certificate: '',
+      university: ''
     }
-  }
+  })
+
+  useEffect(() => {
+    request.get('/api/v1/details')
+      .then(resp => {
+        setInfo(resp.body)
+        return null
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
 
   const [info, setInfo] = useState({
     personal: {
@@ -45,15 +56,16 @@ function PersonalInfo () {
 
   return (
     <div>
-      <h1>{person.personal.name} {person.personal.last_name}</h1>
-      <p>Gender: {person.personal.gender}</p>
-      <p>Age: {person.personal.age}</p>
-      <p>Country: {person.personal.country}</p>
-      <p>City: {person.personal.city}</p>
+      <h1>{info.personal.name} {info.personal.lastName}</h1>
+      <p>Gender: {info.personal.gender}</p>
+      <p>Age: {info.personal.age}</p>
+      <p>Country: {info.personal.country}</p>
+      <p>City: {info.personal.city}</p>
       <hr style={{ width: '50%' }}></hr>
       <h1>Education</h1>
-      <h3>{person.education.university}</h3>
-      <p>{person.education.certificate}</p>
+      <h3>{info.education.university}</h3>
+      <p>{info.education.certificate}</p>
+      <p>Job: {info.position}</p>
     </div>
   )
 }
