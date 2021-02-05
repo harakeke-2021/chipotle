@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import request from 'superagent'
 
-function PotentialPicture () {
+function PotentialPicture() {
   const urlImg = 'https://images.dog.ceo//breeds//hound-basset//n02088238_11846.jpg'
 
   const [image, setImage] = useState('')
@@ -17,8 +17,14 @@ function PotentialPicture () {
   }, [])
 
   return (
-    <div>
-      <img src={image.url}></img>
+    <div className='container'>
+      <div className='photo-panel'>
+        <img src={image.url} className='dog-img'></img>
+        <div className='btn-panel'>
+          <button className='glow-on-hover'>No</button>
+          <button className='glow-on-hover'>Yes</button>
+        </div>
+      </div>
     </div>
   )
 }

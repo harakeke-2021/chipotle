@@ -29,7 +29,7 @@ function PersonalInfo () {
   }, [])
 
   return (
-    <div>
+    <div className='photo-details'>
       <h1>{info.personal.name} {info.personal.lastName}</h1>
       <p>Gender: {info.personal.gender}</p>
       <p>Age: {info.personal.age}</p>
