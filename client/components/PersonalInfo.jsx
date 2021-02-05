@@ -20,13 +20,13 @@ function PersonalInfo () {
   useEffect(() => {
     request.get('/api/v1/details')
       .then(resp => {
-        setInfo(resp)
+        setInfo(resp.body)
         return null
       })
       .catch(err => {
         console.error(err)
       })
-  })
+  }, [])
 
   return (
     <div className='text'>

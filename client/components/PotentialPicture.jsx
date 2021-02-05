@@ -17,7 +17,7 @@ function PotentialPicture () {
 
   return (
     <>
-      <img src={image} className='dog-img'></img>
+      <img src={image.url} className='dog-img'></img>
     </>
   )
 }
