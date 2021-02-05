@@ -28,32 +28,6 @@ function PersonalInfo () {
       })
   }, [])
 
-  const [info, setInfo] = useState({
-    personal: {
-      name: '',
-      last_name: '',
-      gender: '',
-      age: null,
-      country: '',
-      city: ''
-    },
-    education: {
-      certificate: '',
-      university: ''
-    }
-  })
-
-  useEffect(() => {
-    request.get('/api/v1/details')
-      .then(resp => {
-        setInfo(resp)
-        return null
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  })
-
   return (
     <div>
       <h1>{info.personal.name} {info.personal.lastName}</h1>
