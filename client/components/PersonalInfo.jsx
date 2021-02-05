@@ -28,21 +28,6 @@ function PersonalInfo () {
       })
   }, [])
 
-  const [info, setInfo] = useState({
-    personal: {
-      name: '',
-      last_name: '',
-      gender: '',
-      age: null,
-      country: '',
-      city: ''
-    },
-    education: {
-      certificate: '',
-      university: ''
-    }
-  })
-
   useEffect(() => {
     request.get('/api/v1/details')
       .then(resp => {
