@@ -14,13 +14,20 @@ router.post('/', (req, res) => {
 })
 
 router.get('/dog', (req, res) => {
-  const getReq = 'https://dog.ceo/api/breeds/image/random'
+  const apiUrl = 'https://dog.ceo/api/breeds/image/random'
 
-  request.get(getReq)
-    .then((apiRes) => {
-      const { message } = apiRes.body
-      console.log(message)
-      res.json({ message })
+  request.get(apiUrl)
+    .then(({ body }) => {
+      const { message: url } = body
+      res.json({ url })
+      return null
+    })
+    .catch(err => {
+      console.error(err)
+      res.status(500).json({
+        route: '/dog',
+        error: 'internal server error'
+      })
     })
 })
 
