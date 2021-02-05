@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import request from 'superagent'
 
 function PersonalInfo () {
   const person = {
@@ -15,6 +16,32 @@ function PersonalInfo () {
       university: 'Boston University'
     }
   }
+
+  const [info, setInfo] = useState({
+    personal: {
+      name: '',
+      last_name: '',
+      gender: '',
+      age: null,
+      country: '',
+      city: ''
+    },
+    education: {
+      certificate: '',
+      university: ''
+    }
+  })
+
+  useEffect(() => {
+    request.get('/api/v1/details')
+      .then(resp => {
+        setInfo(resp)
+        return null
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  })
 
   return (
     <div>
