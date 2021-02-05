@@ -17,7 +17,7 @@ function PersonalInfo () {
   }
 
   return (
-    <div>
+    <div className='photo-details'>
       <h1>{person.personal.name} {person.personal.last_name}</h1>
       <p>Gender: {person.personal.gender}</p>
       <p>Age: {person.personal.age}</p>
