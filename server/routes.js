@@ -23,3 +23,21 @@ router.get('/dog', (req, res) => {
       res.json({ message })
     })
 })
+
+router.get('/details', (req, res) => {
+  const apiUrl = 'https://pipl.ir/v1/getPerson'
+
+  request.get(apiUrl)
+    .then(({ body }) => {
+      console.log(body)
+      res.json(body)
+      return null
+    })
+    .catch(err => {
+      console.error(err)
+      res.status(500).json({
+        route: '/details',
+        error: 'internal server error'
+      })
+    })
+})
